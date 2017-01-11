@@ -1,10 +1,10 @@
 (function ($) {
-    // register namespace
-    $.extend(true, window, {
-        "Slick": {
-            "RowSelectionModel": RowSelectionModel
-        }
-    });
+  // register namespace
+  $.extend(true, window, {
+    "Slick": {
+      "RowSelectionModel": RowSelectionModel
+    }
+  });
 
     function RowSelectionModel(options) {
         var _grid;
