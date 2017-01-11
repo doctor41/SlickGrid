@@ -1,10 +1,9 @@
 (function ($) {
-  // register namespace
-  $.extend(true, window, {
-    "Slick": {
-      "RowSelectionModel": RowSelectionModel
-    }
-  });
+    $.extend(true, window, {
+        "Slick": {
+            "RowSelectionModel": RowSelectionModel
+        }
+    });
 
     function RowSelectionModel(options) {
         var _grid;
@@ -137,16 +136,10 @@
             var selection = rangesToRows(_ranges);
             var idx = $.inArray(cell.row, selection);
 
-            //if (!e.ctrlKey && !e.shiftKey && !e.metaKey) {
-            //  return false;
-            //}
-            //else
             if (_grid.getOptions().multiSelect) {
-                //if (idx === -1 && (e.ctrlKey || e.metaKey)) {
                 if (idx === -1) {
                     selection.push(cell.row);
                     _grid.setActiveCell(cell.row, cell.cell);
-                    //} else if (idx !== -1 && (e.ctrlKey || e.metaKey)) {
                 } else if (idx !== -1) {
                     selection = $.grep(selection, function (o, i) {
                         return (o !== cell.row);
@@ -169,7 +162,6 @@
 
             _ranges = rowsToRanges(selection);
             setSelectedRanges(_ranges);
-            //e.stopImmediatePropagation();
 
             return true;
         }
